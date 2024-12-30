@@ -8,4 +8,4 @@ dotnet run --project tool -- --task bench --langs c --problems mandelbrot
 
 cd ../website
 
-sudo npm i && pnpm content && pnpm build
+sudo pnpm i && pnpm content && pnpm build
