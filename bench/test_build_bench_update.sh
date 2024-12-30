@@ -7,5 +7,5 @@ dotnet run --project tool -- --task test --langs c --problems mandelbrot
 dotnet run --project tool -- --task bench --langs c --problems mandelbrot
 
 cd ../website
-
-sudo pnpm i && pnpm content && pnpm build
+#don't forget pnpm init
+pnpm i && pnpm content && pnpm build
