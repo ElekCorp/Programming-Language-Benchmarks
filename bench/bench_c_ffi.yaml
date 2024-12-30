@@ -33,8 +33,9 @@ environments:
     out_dir: out
     run_cmd: app
   - os: linux
-    compiler: zigcc
+    compiler: zig
     version: latest
+    compiler_version_command: zig version
     docker:
     include: c
     build: zig cc  -pipe -O3 -fomit-frame-pointer -march=native -Wno-deprecated-declarations -mno-fma -o app app.c -lm -lcrypto
