@@ -33,7 +33,7 @@ environments:
     out_dir: out
     run_cmd: app
   - os: linux
-    compiler: zig
+    compiler: zigcc
     version: latest
     compiler_version_command: zig version
     docker:
