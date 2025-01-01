@@ -35,7 +35,7 @@ environments:
     compiler: flang
     compiler_version_command: flang --version
     version: 7
-    docker:
+    docker: gmao/llvm-flang
     include:
     build: flang -O3 -march=native -fopenmp -L/usr/lib/llvm-7/lib/ -fopenmp-simd -lgmp -o out/app app.f90
     out_dir: out
