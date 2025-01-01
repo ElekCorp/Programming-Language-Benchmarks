@@ -24,19 +24,36 @@ source_rename_to: app.f90
 environments:
   - os: linux
     compiler: gfortran
+    compiler_version_command: gfortran --version
+    version: 10
+    docker:
+    include:
+    build: gfortran -O3 -march=native -fopenmp -fopenmp-simd -lgmp -o out/app app.f90
+    out_dir: out
+    run_cmd: app
+  - os: linux
+    compiler: gfortran-10
     compiler_version_command: gfortran-10 --version
     version: 10
     docker:
     include:
-    build: gfortran-10 -O3 -march=native -dalign -fopenmp -fopenmp-simd -lgmp -o out/app app.f90
+    build: gfortran-10 -O3 -march=native -fopenmp -fopenmp-simd -lgmp -o out/app app.f90
+    out_dir: out
+    run_cmd: app
+  - os: linux
+    compiler: nvfortran
+    compiler_version_command: nvfortran --version
+    version: latest
+    docker: nvcr.io/nvidia/nvhpc:24.11-devel-cuda_multi-ubuntu22.04
+    include:
+    build: nvfortran -O3 -march=native -fopenmp -o out/app app.f90
     out_dir: out
     run_cmd: app
   - os: linux
     compiler: flang
-    compiler_version_command: flang --version
-    version: 7
-    docker: gmao/llvm-flang
+    compiler_version_command: flang-new --version
+    version: latest
     include:
-    build: flang -O3 -march=native -fopenmp -L/usr/lib/llvm-7/lib/ -fopenmp-simd -lgmp -o out/app app.f90
+    build: flang-new -O3 -march=native -o out/app app.f90
     out_dir: out
     run_cmd: app

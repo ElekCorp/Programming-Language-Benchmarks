@@ -2,7 +2,7 @@
 
 #rm -rf build
 
-LANGS="python"
+LANGS="fortran c cpp zig go javascript python"
 PROBLEMS="mandelbrot nbody spectral-norm"
 
 dotnet run --project tool -- --task build --langs $LANGS --problems $PROBLEMS --force-rebuild
