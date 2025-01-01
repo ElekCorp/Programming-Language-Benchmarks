@@ -44,6 +44,7 @@
     "nuxt": "^2.17.2",
     "nuxt-property-decorator": "^2.9.1",
     "scss-google-fonts": "^1.0.0",
+    "serve": "^14.2.4",
     "vue": "^2.7.15",
     "vue-class-component": "^7.2.6",
     "vue-property-decorator": "^9.1.2",
