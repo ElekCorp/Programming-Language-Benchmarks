@@ -2,9 +2,11 @@
 
 rm -rf build
 
-dotnet run --project tool -- --task build --langs c --problems mandelbrot
-dotnet run --project tool -- --task test --langs c --problems mandelbrot
-dotnet run --project tool -- --task bench --langs c --problems mandelbrot
+LANGS="c zig go"
+
+dotnet run --project tool -- --task build --langs $LANGS --problems mandelbrot
+dotnet run --project tool -- --task test --langs $LANGS --problems mandelbrot
+dotnet run --project tool -- --task bench --langs $LANGS --problems mandelbrot
 
 cd ../website
 
