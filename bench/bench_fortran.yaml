@@ -49,9 +49,9 @@ environments:
     build: nvfortran -O3 -march=native -fopenmp -o out/app app.f90
     after_build: 
       - touch app.sh
-      - echo "#!/bin/bash\npodman run --volume $(pwd):/src --workdir /src nvcr.io/nvidia/nvhpc:24.11-devel-cuda_multi-ubuntu22.04" > app.sh
+      - echo -e "#\!/bin/bash\npodman run --volume $(pwd):/src --workdir /src nvcr.io/nvidia/nvhpc:24.11-devel-cuda_multi-ubuntu22.04" > app.sh
     out_dir: out
-    run_cmd: app.sh $$ app
+    run_cmd: app.sh && app
   - os: linux
     compiler: flang
     compiler_version_command: flang-new --version
