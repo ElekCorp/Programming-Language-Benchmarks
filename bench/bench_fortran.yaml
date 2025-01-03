@@ -47,12 +47,12 @@ environments:
     include:
     build: nvfortran -O3 -march=native -mp=multicore -o out/app app.f90
     out_dir: out
-    run_cmd: app 
+    run_cmd: app
   - os: linux
-    compiler: flang
-    compiler_version_command: flang-new --version
+    compiler: nvfortran_gpu
+    compiler_version_command: nvfortran --version
     version: latest
     include:
-    build: flang-new -O3 -march=native -o out/app app.f90
+    build: nvfortran -O3 -march=native -mp=gpu -o out/app app.f90
     out_dir: out
-    run_cmd: app
+    run_cmd: app 
