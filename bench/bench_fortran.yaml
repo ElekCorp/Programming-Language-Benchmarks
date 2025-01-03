@@ -45,7 +45,7 @@ environments:
     compiler_version_command: nvfortran --version
     version: latest
     include:
-    build: nvfortran -O3 -march=native -fopenmp -o out/app app.f90
+    build: nvfortran -O3 -march=native -mp=multicore -o out/app app.f90
     out_dir: out
     run_cmd: app 
   - os: linux
